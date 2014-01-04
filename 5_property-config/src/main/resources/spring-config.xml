@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--利用PropertyPlaceholderConfigurer來載入設定檔後，就可以在xml中使用${book.name}來載入properties設定檔的資訊-->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:book.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="book" class="org.noteverything.practice.Book">
+        <property name="bookName" value="${book.name}"/>
+    </bean>
+</beans>
