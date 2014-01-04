@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="book" class="org.noteverything.practice.Book">
+        <property name="bookName" value="This a Book owned by student"/>
+    </bean>
+
+    <bean id="student" class="org.noteverything.practice.Student">
+        <property name="studentName" value="i am student"/>
+        <property name="book" ref="book"/>
+    </bean>
+
+    <bean id="student2" class="org.noteverything.practice.Student">
+        <property name="studentName" value="i am student 2"/>
+        <property name="book">
+            <bean id="book2" class="org.noteverything.practice.Book">
+                <property name="bookName" value="This a Book owned by student2"/>
+            </bean>
+        </property>
+    </bean>
+</beans>
