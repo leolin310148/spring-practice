@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="book" class="org.noteverything.practice.Book">
+        <property name="bookName" value="This book name is set from setter"/>
+    </bean>
+
+    <bean id="book2" class="org.noteverything.practice.Book">
+        <constructor-arg name="bookName" value="This book name is set from constructor"/>
+    </bean>
+
+
+    <bean id="hasBookName" class="org.noteverything.practice.Book">
+        <property name="bookName" value="This book has bookName!"/>
+    </bean>
+</beans>
