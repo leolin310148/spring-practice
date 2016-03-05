@@ -11,6 +11,7 @@ public class HelloSpringApp {
         Book book = new Book();
         book.setBookName("This is a Java book");
         System.out.println(book.getBookName());
+        System.out.println("test");
     }
 
 
